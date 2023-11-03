@@ -5,8 +5,6 @@ const User = require("../../models").User;
 const createUser = async (req, res) => {
   const { name, email, password } = req.body;
 
-  console.log("email", email);
-
   const findUser = await User.findOne({
     where: { email, name },
   });
@@ -27,7 +25,12 @@ const createUser = async (req, res) => {
         });
       }
     } else {
-      res.status(500).json({ message: "Cet utilisateur existe déjà. Veillez modifier vos informations." });
+      res
+        .status(500)
+        .json({
+          message:
+            "Cet utilisateur existe déjà. Veillez modifier vos informations.",
+        });
     }
   } catch (err) {
     res.status(400).json(err);
