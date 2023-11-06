@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 let positionsRouter = require("./routes/position");
+let sitesRouter = require("./routes/site");
 
 // get port
 const PORT = process.env.PORT;
@@ -33,6 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/positions", positionsRouter);
+app.use("/sites", sitesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
