@@ -17,20 +17,20 @@ const createUser = async (req, res) => {
         password: cryptPassword(password),
       });
       if (user) {
-        res.status(200).json({ message: "success", user });
+        res.status(200).json({ message: "success", data: user });
       } else {
         res.status(500).json({
           message:
             "Le serveur a rencontré une erreur et n'a pas pu traiter votre demande.",
+          data: null,
         });
       }
     } else {
-      res
-        .status(500)
-        .json({
-          message:
-            "Cet utilisateur existe déjà. Veillez modifier vos informations.",
-        });
+      res.status(500).json({
+        message:
+          "Cet utilisateur existe déjà. Veillez modifier vos informations.",
+        data: null,
+      });
     }
   } catch (err) {
     res.status(400).json(err);
