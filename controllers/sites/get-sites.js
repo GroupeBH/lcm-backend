@@ -6,8 +6,6 @@ const getSites = async (req, res) => {
   try {
     if (sites.length > 0) {
       res.status(200).json({ message: "success", sites });
-    } else {
-      res.status(404).json({ message: "Not Found" });
     }
   } catch (err) {
     res.status(500).json(err);
