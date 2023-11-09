@@ -12,6 +12,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 let positionsRouter = require("./routes/position");
 let sitesRouter = require("./routes/site");
+let rolesRouter = require("./routes/role");
 let agentsRouter = require("./routes/agent");
 
 // get port
@@ -36,6 +37,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/positions", positionsRouter);
 app.use("/sites", sitesRouter);
+app.use("/roles", rolesRouter);
 app.use("/agents", agentsRouter);
 
 // catch 404 and forward to error handler
