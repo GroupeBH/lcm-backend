@@ -6,10 +6,7 @@ const getPositions = async (req, res) => {
   try {
     if (positions.length > 0) {
       res.status(200).json({ message: "success", positions });
-    } else {
-      res.status(404).json({ message: "Not Found" });
-    }
-  } catch (err) {
+  } } catch (err) {
     res.status(500).json(err);
   }
 };
