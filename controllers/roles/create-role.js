@@ -1,5 +1,4 @@
 const Role = require("../../models").Role;
-// const User = require("../../models").User;
 
 const createRole = async (req, res) => {
   const { name } = req.body;
