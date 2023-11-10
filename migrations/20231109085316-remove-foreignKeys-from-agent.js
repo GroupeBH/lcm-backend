@@ -25,15 +25,6 @@ module.exports = {
     .then(() => {
       return queryInterface.removeColumn('Agents', 'site');
     })
-    .then(() => {
-      return queryInterface.removeColumn('Agents', 'ContactId');
-    })
-    .then(() => {
-      return queryInterface.removeColumn('Agents', 'PositionId');
-    })
-    .then(() => {
-      return queryInterface.removeColumn('Agents', 'SiteId');
-    })
   },
 
   async down (queryInterface, Sequelize) {

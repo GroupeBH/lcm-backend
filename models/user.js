@@ -1,6 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
-const Role = require("./position");
+const Role = require("./role");
 const Site = require("./site");
 const Contact = require("./contact");
 module.exports = (sequelize, DataTypes) => {
