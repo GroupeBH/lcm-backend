@@ -1,7 +1,14 @@
 const User = require("../../models").User;
+const { Op } = require("sequelize");
+const Contact = require("../../models").Contact;
+const Site = require("../../models").Site;
+const Role = require("../../models").Role;
 
 const getUsers = async (req, res) => {
-  const users = await User.findAll();
+  const users = await User.findAll({
+    where: {},
+    include: [{ model: Contact }, { model: Site }, { model: Role }],
+  });
   console.log("users : ", users);
   try {
     if (users.length > 0) {
