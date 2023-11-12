@@ -24,12 +24,13 @@ const createUser = async (req, res) => {
     site,
   } = req.body;
 
-  const contactData = _.omit(req.body, ["site", "role", "name", "email"]);
+  const contactData = _.omit(req.body, ["site", "role", "name"]);
 
   let contactCriteria = {
     firstName,
     lastName,
     phone,
+    email,
   };
 
   const findContact = await Contact.findOne({ where: contactCriteria });
