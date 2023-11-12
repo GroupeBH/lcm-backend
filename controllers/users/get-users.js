@@ -1,5 +1,4 @@
 const User = require("../../models").User;
-const { Op } = require("sequelize");
 const Contact = require("../../models").Contact;
 const Site = require("../../models").Site;
 const Role = require("../../models").Role;
