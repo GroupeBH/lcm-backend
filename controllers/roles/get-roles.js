@@ -5,9 +5,10 @@ const getRoles = async (req, res) => {
   try {
     if (roles.length > 0) {
       res.status(200).json({ message: "success", roles });
-    } else {
-      res.status(500).json({ message: "Aucun role trouvé.", data: null });
-    }
+    } 
+    // else {
+    //   res.status(500).json({ message: "Aucun role trouvé.", data: null });
+    // }
   } catch (err) {
     throw err;
   }
