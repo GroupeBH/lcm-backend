@@ -27,7 +27,7 @@ const createSite = async (req, res) => {
         .status(500)
         .json({
           message:
-            "Cet utilisateur existe déjà. Veillez modifier vos informations.",
+            "Ce site existe déjà. Veillez modifier votre information.",
         });
     }
   } catch (err) {
