@@ -1,4 +1,3 @@
-
 const Position = require("../../models").Position;
 
 const createPosition = async (req, res) => {
@@ -14,7 +13,7 @@ const createPosition = async (req, res) => {
         name,
       });
       if (position) {
-        console.log("position crée")
+        console.log("position crée");
         res.status(200).json({ message: "success", position });
       } else {
         res.status(500).json({
@@ -23,12 +22,10 @@ const createPosition = async (req, res) => {
         });
       }
     } else {
-      res
-        .status(500)
-        .json({
-          message:
-            "Cet utilisateur existe déjà. Veillez modifier vos informations.",
-        });
+      res.status(500).json({
+        message:
+          "Cette position existe déjà. Veillez modifier votre information.",
+      });
     }
   } catch (err) {
     res.status(400).json(err);

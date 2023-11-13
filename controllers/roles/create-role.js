@@ -22,7 +22,7 @@ const createRole = async (req, res) => {
           }
         } else {
           res.status(500).json({
-            message: "Cet role existe deja",
+            message: "Ce role existe déjà",
             data: null,
           });
         }
