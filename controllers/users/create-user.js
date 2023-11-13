@@ -24,14 +24,15 @@ const createUser = async (req, res) => {
     site,
   } = req.body;
 
-  const contactData = _.omit(req.body, ["site", "role", "name"]);
+  const contactData = _.omit(req.body, ["site", "role"]);
 
   let contactCriteria = {
     firstName,
     lastName,
-    phone,
     email,
   };
+
+  console.log("contactData : ", contactData);
 
   const findContact = await Contact.findOne({ where: contactCriteria });
 
@@ -74,38 +75,6 @@ const createUser = async (req, res) => {
     res.status(400).json(err);
   }
 };
-
-/*
-  try {
-    const findContact = await Contact.findOne({
-      where: contactCriteria,
-    });
-
-    const findContact = await Contact.findAll();
-    console.log("findContact : ", findContact);
-    res.status(200).json({ message: "success", findContact });
-
-    const contact = await Contact.create(contactData);
-    if (contact) {
-      res.status(200).json({ message: "success", contact });
-    } else {
-      res.status(500).json({ message: "Le serveur a rencontré une erreur et n'a pas pu traiter votre demande." });
-    }
-  } catch (err) {
-    throw err;
-  }
-
-  const findContact = await Contact.findOne({
-    where: contactData,
-  });
-
-  console.log("findContact : ", findContact);
-
-  const findUser = await User.findOne({
-    where: { email, name },
-  });
-
-*/
 
 module.exports = {
   createUser,
