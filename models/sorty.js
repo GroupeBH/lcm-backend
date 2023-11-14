@@ -5,7 +5,7 @@ const {
 const Product = require('./product');
 const Site = require('./site');
 const User = require('./user');
-const Client = require('./client');
+// const Client = require('./client');
 module.exports = (sequelize, DataTypes) => {
   class Sorty extends Model {
     /**
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       Sorty.belongsTo(models.Product);
       Sorty.belongsTo(models.Site);
       Sorty.belongsTo(models.User);
-      Sorty.belongsTo(models.Client);
+      // Sorty.belongsTo(models.Client);
       
     }
   }
@@ -52,13 +52,13 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       },
     },
-    UserId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: Client,
-        key: 'id'
-      },
-    }
+    // ClientId: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: Client,
+    //     key: 'id'
+    //   },
+    // }
   }, {
     sequelize,
     modelName: 'Sorty',
