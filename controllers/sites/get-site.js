@@ -1,11 +1,19 @@
 const Site = require("../../models").Site;
+const Agent = require("../../models").Agent;
+const Position = require("../../models").Position;
+const Contact = require("../../models").Contact;
 
 const getSite = async (req, res) => {
-  console.log(req.params)
+
   const site = await Site.findOne({
-    where: {id: req.params.id}
+    where: {id: req.params.id},
+    include: [{
+      model: Agent,
+      include: [Contact,Position]
+    }],
+
   });
-  console.log("Site : ", site);
+
   try {
     if (site !== null) {
       res.status(200).json({ message: "success", site });

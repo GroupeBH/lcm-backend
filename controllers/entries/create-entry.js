@@ -6,6 +6,8 @@ const _ = require("lodash");
 const createEntry = async (req, res) => {
   const { site, user, productName, quantity, price } = req.body;
 
+  console.log("req data", req.body)
+
   const findedProduct = await Product.findOne({
     where: {name: productName},
   });
@@ -24,7 +26,7 @@ const createEntry = async (req, res) => {
       const entry = await Entry.create({
         quantity: _.toNumber(quantity),
         unitPrice: _.toNumber(price),
-        SiteId: site,
+        SiteId: _.toNumber(site),
         ProductId: product.id,
         UserId: user
       })
