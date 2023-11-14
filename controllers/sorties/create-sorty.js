@@ -31,7 +31,7 @@ const createSorty = async (req, res) => {
             ProductId: findedProduct.id,
             UserId: user,
             isPaid,
-            clientId: client.id
+            ClientId: client.id
         })
 
         console.log("sorty : ", sorty);
