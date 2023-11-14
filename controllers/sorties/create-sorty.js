@@ -29,9 +29,9 @@ const createSorty = async (req, res) => {
             quantity: _.toNumber(quantity),
             SiteId: site,
             ProductId: findedProduct.id,
-            UserId: user,
+            UserId: _.toNumber(user),
             isPaid,
-            ClientId: client.id
+            ClientId: _.toNumber(client.id)
         })
 
         console.log("sorty : ", sorty);
