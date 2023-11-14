@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const Agent = require('./agent')
 module.exports = (sequelize, DataTypes) => {
   class Site extends Model {
     /**
@@ -11,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Site.hasMany(models.Agent)
     }
   }
   Site.init({
