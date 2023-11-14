@@ -22,6 +22,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Sorty.init({
     quantity: DataTypes.INTEGER,
+    status: DataTypes.BOOLEAN,
+
+    //Associations
     ProductId: {
       type: DataTypes.INTEGER,
       references: {
