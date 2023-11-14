@@ -3,10 +3,10 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.addColumn("Sorties", "clientId", {
+    await queryInterface.addColumn("Sorties", "ClientId", {
       type: Sequelize.INTEGER,
       references: {
-        model: "Roles", // name of Source model
+        model: "Clients", // name of Source model
         key: "id",
       },
       onUpdate: "CASCADE",
