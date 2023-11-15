@@ -17,6 +17,7 @@ let agentsRouter = require("./routes/agent");
 let entriesRouter = require("./routes/entry");
 let sortiesRouter = require("./routes/sorty");
 let productRouter = require("./routes/product");
+let clientRouter = require("./routes/client");
 // get port
 const PORT = process.env.PORT;
 
@@ -44,6 +45,7 @@ app.use("/agents", agentsRouter);
 app.use("/entries", entriesRouter);
 app.use("/sorties", sortiesRouter);
 app.use("/products", productRouter);
+app.use("/clients", clientRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
